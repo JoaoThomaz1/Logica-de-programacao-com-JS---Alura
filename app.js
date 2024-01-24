@@ -1,15 +1,15 @@
 alert('Boas vindas ao jogo do Número Secreto!');
 
-let numeroSecreto = 5;
+let numeroSecreto = parseInt(Math.random() * 100 + 1);
 let chute;
-let numeroChute;
+let numeroChute = 1;
+let limite = 5;
 
 while (chute != numeroSecreto || numeroChute < limite) {
-   chute = prompt('Escolha um número entre 1 e 10!');
-   let limite = 5;
+   chute = prompt('Escolha um número entre 1 e 100!');
 
    if (chute == numeroSecreto) {
-      alert(`Isso aí! Você acertou o número secreto ${numeroSecreto}!`);// primeira forma de juntar variavel com texto(para usar esse modo sem pre colocar o texto entre acrases ` )
+      break;
    } else if (chute > numeroSecreto) {
       alert(`O número secreto está abaixo de ${chute}`);
    } else {
@@ -18,9 +18,14 @@ while (chute != numeroSecreto || numeroChute < limite) {
    
    if (numeroChute > limite) {
       alert('Você  errou! O número era ' + numeroSecreto);// segunda forma de juntar uma variavel com texto
+      numeroSecreto = parseInt(Math.random() * 100 + 1);
+      numeroChute = 0;
    }
 
    numeroChute ++;
 
 }
 
+let palavraTentativa = numeroChute > 1 ? 'Tentativas.' : 'Tentativa.';
+
+alert(`Isso aí! Você acertou o número secreto ${numeroSecreto}! Isso em ${numeroChute} ${palavraTentativa}`);// primeira forma de juntar variavel com texto(para usar esse modo sem pre colocar o texto entre acrases ` )

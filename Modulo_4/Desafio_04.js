@@ -12,7 +12,7 @@ console.log(`Olá, ${nome}`);
 
 //Exercicio 03
 
-let nome = "João";
+let nome2 = "João";
 
 alert("Olá, " + nome);
 //ou

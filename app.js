@@ -1,12 +1,13 @@
 alert('Boas vindas ao jogo do Número Secreto!');
 
-let numeroSecreto = parseInt(Math.random() * 100 + 1);
+let numeroMaximo = 100
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
 let chute;
 let numeroChute = 1;
 let limite = 5;
 
 while (chute != numeroSecreto || numeroChute < limite) {
-   chute = prompt('Escolha um número entre 1 e 100!');
+   chute = prompt(`Escolha um número entre 1 e ${numeroMaximo}!`);
 
    if (chute == numeroSecreto) {
       break;
@@ -18,7 +19,7 @@ while (chute != numeroSecreto || numeroChute < limite) {
    
    if (numeroChute > limite) {
       alert('Você  errou! O número era ' + numeroSecreto);// segunda forma de juntar uma variavel com texto
-      numeroSecreto = parseInt(Math.random() * 100 + 1);
+      numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
       numeroChute = 0;
    }
 
